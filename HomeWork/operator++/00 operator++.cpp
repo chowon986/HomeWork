@@ -57,6 +57,8 @@ int main()
 
 	MyInt MyValue = 0;
 	MyInt MyResult = 0;
+	
+	MyResult = MyValue;
 
 	MyResult = ++MyValue;
 	MyResult = 0;
@@ -64,5 +66,4 @@ int main()
 
 	int a = 0;
 }
-
-// MyResult에 MyValue값이 들어가야하는데
+//반드시 그림을 그리세요 MyValue랑 this
