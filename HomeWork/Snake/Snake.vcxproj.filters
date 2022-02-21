@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="Body.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameBlock.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalGameLogic.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="Head.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleMath.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleObject.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleRandom.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleScreen.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Contents">
+      <UniqueIdentifier>{5b108f7b-e191-4574-aa3c-d83cf9d247b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{ec905f7c-4cf2-4f73-99eb-877b7431d360}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Body.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameBlock.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalGameLogic.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="Head.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleMath.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleObject.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleRandom.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleScreen.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
