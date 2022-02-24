@@ -200,18 +200,21 @@ private:
         {
 
         }
-        ///////////////////////////////////////////////////////
+        //////////////////릭 제거 숙제//////////////////
         ~MapNode()
         {
-            if (nullptr != LeftChild_ || nullptr != RightChild_)
+            if (nullptr != LeftChild_)
             {
                 delete LeftChild_;
-                delete RightChild_;
                 LeftChild_ = nullptr;
+            } 
+            
+            if(nullptr != RightChild_)
+            {
+                delete RightChild_;
                 RightChild_ = nullptr;
             }
         }
-        ///////////////////////////////////////////////////////
     };
 
 public:
