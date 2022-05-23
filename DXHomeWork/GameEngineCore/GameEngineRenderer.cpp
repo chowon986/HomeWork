@@ -32,35 +32,37 @@ void GameEngineRenderer::Render(float _DeltaTime)
 {
 	// 방향을 정했고.
 	// 나아가는 크기가 1이 아니라는 겁니다.
-	// _DeltaTime *= 200.0f;
-
-	// float4 Dir = float4::DegreeToDirection2D(Angle);
+	 //_DeltaTime *= 200.0f;
+	 //float4 Dir = float4::DegreeToDirection2D(Angle);
 
 	// x 100.0f = cosf(각도) * 빗변의 길이
 	// y 100.0f = sinf(각도) * 빗변의 길이
 
-	float4 Dir = {100.0f, 100.0f, 0.0f};
+	//float4 Dir = {100.0f, 100.0f, 0.0f};
 
-	float4::VectorRotationToRadianZ(Dir)
+	//float4::VectorRotationToRadianZ(Dir);
 
-	Angle += _DeltaTime * 360.0f;
-	Dis += _DeltaTime * 10.0f;
+	//Angle += _DeltaTime * 360.0f;
+	//Dis += _DeltaTime * 10.0f;
 
-	GetActor()->GetTransform().SetPosition(float4{300.0f, 300.0f} + Dir * Dis);
+	//GetActor()->GetTransform().SetPosition(float4{300.0f, 300.0f} + Dir * Dis);
 
 	// GetActor()->GetTransform().SetMove(Dir * _DeltaTime * 200.0f);
 
 	// 랜더링
-	GameEngineVertexBuffer* Vertex = GameEngineVertexBuffer::Find("Rect");
-	GameEngineIndexBuffer* Index = GameEngineIndexBuffer::Find("Rect");
+	Angle += _DeltaTime * 360;
+	float4 Dir = float4::DegreeToDirection2D(Angle);
+	GetActor()->GetTransform().SetPosition(float4{300.0f, 300.0f } + Dir);
+
+
+	GameEngineVertexBuffer* Vertex = GameEngineVertexBuffer::Find("Star");
+	GameEngineIndexBuffer* Index = GameEngineIndexBuffer::Find("Star");
 	
 	std::vector<POINT> DrawVertex;
 	DrawVertex.resize(Index->Indexs.size());
 
 	std::vector<float4> CopyBuffer;
 	CopyBuffer.resize(Index->Indexs.size());
-
-
 
 	for (size_t i = 0; i < Index->Indexs.size(); i++)
 	{
@@ -74,12 +76,10 @@ void GameEngineRenderer::Render(float _DeltaTime)
 		CopyBuffer[i] *= GetActor()->GetTransform().GetScale();
 
 		// 자전
-		// CopyBuffer[TriIndex] *= GetActor()->GetTransform().GetScale();
+		//CopyBuffer[TriIndex] *= GetActor()->GetTransform().GetScale();
 
 		// 이동
 		CopyBuffer[i] += GetActor()->GetTransform().GetPosition();
-
-		
 
 		DrawVertex[i] = CopyBuffer[i].GetConvertWindowPOINT();
 	}
@@ -90,6 +90,10 @@ void GameEngineRenderer::Render(float _DeltaTime)
 		Polygon(GameEngineWindow::GetHDC(), &DrawVertex[i], 3);
 	}
 	
+	for (size_t i = 0; i < Vertex->Vertexs.size(); i++)
+	{
+		Vertex->Vertexs[i] = float4::VectorRotationToRadianZ(Vertex->Vertexs[i], _DeltaTime * 5);
+	}
 
 	// Rectangle(GameEngineWindow::GetHDC(), LeftTop.ix(), LeftTop.iy(), RightBot.ix(), RightBot.iy());
 }

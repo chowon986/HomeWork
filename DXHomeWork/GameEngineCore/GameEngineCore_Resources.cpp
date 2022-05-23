@@ -15,20 +15,24 @@ void GameEngineCore::EngineResourcesInitialize()
 	// 리소스들을 이니셜라이즈하는 단계
 
 
-	{
-		// 0       1
+	{   
+		//     0
+		// 5       1
 
 		//    원점
 		
-		// 3       2
+		// 4       2
+		//     3
 
 		std::vector<float4> Vertex;
-		Vertex.push_back(float4(-0.5f, 0.5f));
-		Vertex.push_back(float4(0.5f, 0.5f));
-		Vertex.push_back(float4(0.5f, -0.5f));
-		Vertex.push_back(float4(-0.5f, -0.5f));
+		Vertex.push_back(float4(0.0f, -1.0f));
+		Vertex.push_back(float4(0.85f, -0.5f));
+		Vertex.push_back(float4(0.85f, 0.5f));
+		Vertex.push_back(float4(0.0f, 1.0f));
+		Vertex.push_back(float4(-0.85f, 0.5f));
+		Vertex.push_back(float4(-0.85f, -0.5f));
 
-		GameEngineVertexBuffer::Create("Rect", Vertex);
+		GameEngineVertexBuffer::Create("Star", Vertex);
 	}
 
 	{
@@ -46,15 +50,15 @@ void GameEngineCore::EngineResourcesInitialize()
 
 		// 첫번째
 		Index[0] = 0;
-		Index[1] = 1;
-		Index[2] = 2;
+		Index[1] = 2;
+		Index[2] = 4;
 
 		// 두번째
-		Index[3] = 0;
-		Index[4] = 2;
-		Index[5] = 3;
+		Index[3] = 1;
+		Index[4] = 3;
+		Index[5] = 5;
 
-		GameEngineIndexBuffer::Create("Rect", Index);
+		GameEngineIndexBuffer::Create("Star", Index);
 	}
 
 
