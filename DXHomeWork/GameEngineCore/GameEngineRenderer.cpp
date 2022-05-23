@@ -92,7 +92,7 @@ void GameEngineRenderer::Render(float _DeltaTime)
 	
 	for (size_t i = 0; i < Vertex->Vertexs.size(); i++)
 	{
-		Vertex->Vertexs[i] = float4::VectorRotationToRadianZ(Vertex->Vertexs[i], _DeltaTime * 5);
+		Vertex->Vertexs[i] = float4::VectorRotationToRadianZ(Vertex->Vertexs[i], _DeltaTime * 10);
 	}
 
 	// Rectangle(GameEngineWindow::GetHDC(), LeftTop.ix(), LeftTop.iy(), RightBot.ix(), RightBot.iy());

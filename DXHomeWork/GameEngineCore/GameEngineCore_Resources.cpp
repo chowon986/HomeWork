@@ -25,12 +25,12 @@ void GameEngineCore::EngineResourcesInitialize()
 		//     3
 
 		std::vector<float4> Vertex;
-		Vertex.push_back(float4(0.0f, -1.0f));
-		Vertex.push_back(float4(0.85f, -0.5f));
-		Vertex.push_back(float4(0.85f, 0.5f));
-		Vertex.push_back(float4(0.0f, 1.0f));
-		Vertex.push_back(float4(-0.85f, 0.5f));
-		Vertex.push_back(float4(-0.85f, -0.5f));
+		Vertex.push_back(float4(0.0f, -2.0f));
+		Vertex.push_back(float4(sqrt(3), -1.0f));
+		Vertex.push_back(float4(sqrt(3), 1.0f));
+		Vertex.push_back(float4(0.0f, 2.0f));
+		Vertex.push_back(float4(-sqrt(3), 1.0f));
+		Vertex.push_back(float4(-sqrt(3), -1.0f));
 
 		GameEngineVertexBuffer::Create("Star", Vertex);
 	}
